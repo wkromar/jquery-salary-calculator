@@ -23,7 +23,7 @@
       class="form-control col"
       type="number"
       placeholder="ID#"
-      id="idNumber Input"
+      id="idNumberInput"
     /><input
       class="form-control col"
       type="text"
@@ -36,12 +36,15 @@
       id="annualSalaryInput"
     /><button class="btn btn-outline-success" id="submitButton">Submit</button>
     <button class="btn btn-outline-success" id="deleteButton">Delete</button>
-    <table class="display table-striped table-hover">
+    <table class="tableDisplay table-striped table-hover">
       <thead>
         <tr>
-          <th id="info"></th>
+          <th></th>
         </tr>
       </thead>
+      <tbody id="infoDisplay">
+        <!-- jquery will add things here! -->
+      </tbody>
     </table>
   </body>
 </html>
