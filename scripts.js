@@ -12,7 +12,7 @@ function handleReady() {
 
   //click listeners
   $("#submitButton").on("click", handleClick);
-  // $("#deleteButton").on("click",'deleteEmployee,  delete);
+  $("#infoDisplay").on("click", "#deleteButton", deleteFunction);
 }
 
 function renderToDom() {
@@ -22,15 +22,16 @@ function renderToDom() {
   //append everything in the array, append them to the table
   for (let info of infoBank) {
     $("#infoDisplay").append(`
-      <tr class= "info">
+      <tr class= "info table table-striped table-hover">
       <td>${info.firstName}</td>
       <td>${info.lastName}</td>
-      <td>${info.idNumber}</td>S
+      <td>${info.idNumber}</td>
       <td>${info.jobTitle}</td>
       <td>${info.annualSalary}</td>
+      <td><button id = 'deleteButton' class = 'btn btn-outline-warning'> Delete </button></td>
       </tr>`);
   }
-  //append the total costs below the table
+  // $('delete')
 }
 
 function handleClick() {
@@ -55,6 +56,7 @@ function handleClick() {
 }
 
 function clearInputs() {
+  //clear all the input boxes
   $("#firstNameInput").val("");
   $("#lastNameInput").val("");
   $("#idNumberInput").val("");
@@ -76,7 +78,7 @@ function totalSalary() {
   monthlyCosts.append("Total Cost:", totalCost.toFixed(2));
 }
 
-function delete() {
+function deleteFunction() {
   console.log("in delete");
-  $("#infoDisplay").parent().parent().remove();
+  $(this).parent().parent().remove();
 }
