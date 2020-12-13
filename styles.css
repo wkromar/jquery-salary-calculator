@@ -1,0 +1,9 @@
+.overBudget {
+  background-color: red;
+}
+.underBudget {
+  background-color: green;
+}
+body {
+  background-image: linear-gradient(yellow, green);
+}

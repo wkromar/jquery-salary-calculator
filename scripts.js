@@ -76,6 +76,14 @@ function totalSalary() {
   let totalCost = allSalaries / 12;
   monthlyCosts.empty();
   monthlyCosts.append("Total Cost:", totalCost.toFixed(2));
+
+  if (totalCost >= 20000) {
+    $("#monthlyCosts").addClass("overBudget");
+    $("#monthlyCosts").removeClass("underBudget");
+  } else {
+    $("#monthlyCosts").addClass("underBudget");
+    $("#monthlyCosts").removeClass("overBudget");
+  }
 }
 
 function deleteFunction() {
